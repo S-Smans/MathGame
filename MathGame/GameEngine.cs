@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MathGame
 {
@@ -12,6 +13,8 @@ namespace MathGame
 
         internal void Addition()
         {
+            int score = 0;
+
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -25,6 +28,7 @@ namespace MathGame
                 {
                     Console.WriteLine("Correct!");
                     Console.ReadLine();
+                    score++;
                 }
                 else
                 {
@@ -32,9 +36,14 @@ namespace MathGame
                     Console.ReadLine();
                 }
             }
+
+            Console.WriteLine("Your score is: " + score);
+            Console.ReadLine();
         }
         internal void Subtraction()
         {
+            int score = 0;
+
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -48,6 +57,7 @@ namespace MathGame
                 {
                     Console.WriteLine("Correct!");
                     Console.ReadLine();
+                    score++;
                 }
                 else
                 {
@@ -55,10 +65,14 @@ namespace MathGame
                     Console.ReadLine();
                 }
             }
+
+            Console.WriteLine("Your score is: " + score);
+            Console.ReadLine();
         }
 
         internal void Multiplication()
         {
+            int score = 0;
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -70,19 +84,24 @@ namespace MathGame
 
                 if (userInput == numbers[0] * numbers[1])
                 {
-                Console.WriteLine("Correct!");
-                Console.ReadLine();
-            }
+                    Console.WriteLine("Correct!");
+                    Console.ReadLine();
+                    score++;
+                }
                 else
-            {
-                Console.WriteLine("WRONG!");
-                Console.ReadLine();
+                {
+                    Console.WriteLine("WRONG!");
+                    Console.ReadLine();
+                }
+
             }
+            Console.WriteLine("Your score is: " + score);
+            Console.ReadLine();
         }
-    }
 
         internal void Division()
         {
+            int score = 0;
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -94,15 +113,18 @@ namespace MathGame
 
                 if (userInput == numbers[0] / numbers[1])
                 {
-                Console.WriteLine("Correct!");
-                Console.ReadLine();
-            }
+                    Console.WriteLine("Correct!");
+                    Console.ReadLine();
+                    score++;
+                }
                 else
-            {
-                Console.WriteLine("WRONG!");
-                Console.ReadLine();
+                {
+                    Console.WriteLine("WRONG!");
+                    Console.ReadLine();
+                }
             }
+            Console.WriteLine("Your score is: " + score);
+            Console.ReadLine();
         }
-    }
     }
 }
