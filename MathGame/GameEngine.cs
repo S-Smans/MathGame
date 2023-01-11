@@ -9,8 +9,12 @@ namespace MathGame
 {
     internal class GameEngine
     {
-        private Helper helper = new Helper();
+        private Helper helper;
 
+        public GameEngine(Helper helper) 
+        {
+            this.helper = helper;
+        }
         internal void Addition()
         {
             int score = 0;
@@ -38,7 +42,7 @@ namespace MathGame
             }
 
             Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Addition, score);
+            helper.AddHistory(GameType.Addition, score, (Difficulty)helper.lvl);
             Console.ReadLine();
         }
         internal void Subtraction()
@@ -68,7 +72,7 @@ namespace MathGame
             }
 
             Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Subtraction, score);
+            helper.AddHistory(GameType.Subtraction, score, (Difficulty)helper.lvl);
             Console.ReadLine();
         }
 
@@ -98,7 +102,7 @@ namespace MathGame
 
             }
             Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Multiplication, score);
+            helper.AddHistory(GameType.Multiplication, score, (Difficulty)helper.lvl);
             Console.ReadLine();
         }
 
@@ -127,7 +131,7 @@ namespace MathGame
                 }
             }
             Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Division, score);
+            helper.AddHistory(GameType.Division, score, (Difficulty)helper.lvl);
             Console.ReadLine();
         }
     }

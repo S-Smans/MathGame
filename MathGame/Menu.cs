@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace MathGame
 {
     internal class Menu
-    {   
+    {
+        private Helper helper = new Helper();
         internal void StartGame()
         {
             bool gameInProcess = true;
-            GameEngine engine = new GameEngine();
+            GameEngine engine = new GameEngine(helper);
 
             do
             {
@@ -23,7 +24,7 @@ namespace MathGame
                 switch (userInput.Trim().ToUpper())
                 {
                     case "H":
-                        Helper.History();
+                        helper.History();
                         break;
                     case "A":
                         engine.Addition();
@@ -36,6 +37,9 @@ namespace MathGame
                         break;
                     case "D":
                         engine.Division();
+                        break;
+                    case "L":
+                        helper.ChangeDifficulty();
                         break;
                     case "Q":
                         Console.WriteLine("Goodbye!");
@@ -51,10 +55,12 @@ namespace MathGame
 
         private void PrintIntroduction()
         {
+
             Console.WriteLine("Welcome to the Math Game! Where your knowledge in mathematics will be tested");
             Console.WriteLine("Choose from the options below which math operand you want to test your skills with:");
             Console.WriteLine("-------------------------------------------");
             Console.WriteLine("H - History");
+            Console.WriteLine("L - Level Difficulty: " + (Difficulty)helper.lvl);
             Console.WriteLine("A - Addition");
             Console.WriteLine("S - Subraction");
             Console.WriteLine("M - Multiplication");

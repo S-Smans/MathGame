@@ -10,9 +10,8 @@ namespace MathGame
     {
         public DateTime Date { get; set; }
         public int Score { get; set; }
-
         public GameType Type { get; set; }
-
+        public Difficulty Level { get; set; }
     }
 
     internal enum GameType
@@ -21,5 +20,12 @@ namespace MathGame
         Subtraction,
         Multiplication,
         Division,
+    }
+
+    internal enum Difficulty
+    {
+        Easy = 1,
+        Medium,
+        Hard
     }
 }

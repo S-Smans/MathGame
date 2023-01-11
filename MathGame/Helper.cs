@@ -8,13 +8,14 @@ namespace MathGame
 {
     internal class Helper
     {
-        private static List<Game> games = new List<Game>();
+        private List<Game> games = new List<Game>();
+        public int lvl = 1;
         // Create a class that returns 2 random numbers in an array
         internal int[] GetTwoNumbers()
         {
             Random random = new Random();
-            int first = random.Next(1, 10);
-            int second = random.Next(1, 10);
+            int first = random.Next(1, 10 * lvl);
+            int second = random.Next(1, 10 * lvl);
 
             return new int[] { first, second };
         }
@@ -35,36 +36,46 @@ namespace MathGame
         internal int[] GetDivisionNumbers()
         {
             Random random = new Random();
-            int first = random.Next(2, 101);
-            int second = random.Next(2, 101);
+            int first = random.Next(2, 101 * lvl);
+            int second = random.Next(2, 101 * lvl);
 
             while (first % second != 0)
             {
-                first = random.Next(2, 101);
-                second = random.Next(2, 101);
+                first = random.Next(2, 101 * lvl);
+                second = random.Next(2, 101 * lvl);
             }
 
             return new int[] { first, second };
         }
 
 
-        internal static void History()
+        internal void History()
         {
             foreach (Game game in games)
             {
-                Console.WriteLine($"{game.Date} - {game.Type}: {game.Score}pts");
+                Console.WriteLine($"{game.Date} - {game.Type}: {game.Score}pts on {game.Level}");
             }
             Console.ReadLine();
         }
 
-        internal void AddHistory(GameType type, int score)
+        internal void AddHistory(GameType type, int score, Difficulty level)
         {
             games.Add(new Game
             {
                 Date = DateTime.Now,
                 Score = score,
-                Type = type
+                Type = type,
+                Level = level
             });
         }
-}
+
+        internal void ChangeDifficulty()
+        {
+            lvl++;
+            if (lvl > 3)
+            {
+                lvl = 1;
+            }
+        }
+    }
 }
