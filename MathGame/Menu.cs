@@ -22,6 +22,9 @@ namespace MathGame
 
                 switch (userInput.Trim().ToUpper())
                 {
+                    case "H":
+                        Helper.History();
+                        break;
                     case "A":
                         engine.Addition();
                         break;
@@ -51,6 +54,7 @@ namespace MathGame
             Console.WriteLine("Welcome to the Math Game! Where your knowledge in mathematics will be tested");
             Console.WriteLine("Choose from the options below which math operand you want to test your skills with:");
             Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("H - History");
             Console.WriteLine("A - Addition");
             Console.WriteLine("S - Subraction");
             Console.WriteLine("M - Multiplication");

@@ -38,6 +38,7 @@ namespace MathGame
             }
 
             Console.WriteLine("Your score is: " + score);
+            helper.AddHistory(GameType.Addition, score);
             Console.ReadLine();
         }
         internal void Subtraction()
@@ -67,6 +68,7 @@ namespace MathGame
             }
 
             Console.WriteLine("Your score is: " + score);
+            helper.AddHistory(GameType.Subtraction, score);
             Console.ReadLine();
         }
 
@@ -96,6 +98,7 @@ namespace MathGame
 
             }
             Console.WriteLine("Your score is: " + score);
+            helper.AddHistory(GameType.Multiplication, score);
             Console.ReadLine();
         }
 
@@ -124,6 +127,7 @@ namespace MathGame
                 }
             }
             Console.WriteLine("Your score is: " + score);
+            helper.AddHistory(GameType.Division, score);
             Console.ReadLine();
         }
     }

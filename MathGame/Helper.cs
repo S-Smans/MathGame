@@ -8,6 +8,7 @@ namespace MathGame
 {
     internal class Helper
     {
+        private static List<Game> games = new List<Game>();
         // Create a class that returns 2 random numbers in an array
         internal int[] GetTwoNumbers()
         {
@@ -45,5 +46,25 @@ namespace MathGame
 
             return new int[] { first, second };
         }
-    }
+
+
+        internal static void History()
+        {
+            foreach (Game game in games)
+            {
+                Console.WriteLine($"{game.Date} - {game.Type}: {game.Score}pts");
+            }
+            Console.ReadLine();
+        }
+
+        internal void AddHistory(GameType type, int score)
+        {
+            games.Add(new Game
+            {
+                Date = DateTime.Now,
+                Score = score,
+                Type = type
+            });
+        }
+}
 }
