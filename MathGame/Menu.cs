@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace MathGame
 {
     internal class Menu
-    {
+    {   
         internal void StartGame()
         {
             bool gameInProcess = true;
+            GameEngine engine = new GameEngine();
 
             do
             {
@@ -22,20 +23,16 @@ namespace MathGame
                 switch (userInput.Trim().ToUpper())
                 {
                     case "A":
-                        Console.WriteLine("Addition");
-                        Console.ReadLine();
+                        engine.Addition();
                         break;
                     case "S":
-                        Console.WriteLine("Subtraction");
-                        Console.ReadLine();
+                        engine.Subtraction();
                         break;
                     case "M":
-                        Console.WriteLine("Multiplication");
-                        Console.ReadLine();
+                        engine.Multiplication();
                         break;
                     case "D":
-                        Console.WriteLine("Division");
-                        Console.ReadLine();
+                        engine.Division();
                         break;
                     case "Q":
                         Console.WriteLine("Goodbye!");
@@ -43,7 +40,6 @@ namespace MathGame
                         break;
                     default:
                         Console.WriteLine("Invalid Input");
-                        Console.ReadLine();
                         break;
                 }
             } while (gameInProcess);

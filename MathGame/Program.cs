@@ -4,9 +4,6 @@
 //  1) Create a new class called Menu 
 //  2) Menu class will have a introduction to the game with the available game options
 
-
-
-
 // 2) Get the user input to decide witch game to play
 // 3) Implement each operators method
 
