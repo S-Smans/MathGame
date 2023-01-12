@@ -41,6 +41,9 @@ namespace MathGame
                     case "D":
                         engine.Division();
                         break;
+                    case "R":
+                        engine.Random();
+                        break;
                     case "L":
                         helper.ChangeDifficulty();
                         break;
@@ -69,6 +72,7 @@ namespace MathGame
             Console.WriteLine("S - Subraction");
             Console.WriteLine("M - Multiplication");
             Console.WriteLine("D - Division");
+            Console.WriteLine("R - Random");
             Console.WriteLine("Q - Quit");
             Console.WriteLine();
         }
