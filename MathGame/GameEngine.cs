@@ -22,7 +22,7 @@ namespace MathGame
             stopWatch.Start();
 
             int score = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < helper.ask; i++)
             {
                 Console.Clear();
                 Console.WriteLine("Addition");
@@ -48,7 +48,7 @@ namespace MathGame
             string duration = time.ToString("mm':'ss");
 
             Console.WriteLine($"Your score is: {score} in {duration}");
-            helper.AddHistory(GameType.Addition, score, (Difficulty)helper.lvl, duration);
+            helper.AddHistory(GameType.Addition, score, (Difficulty)helper.lvl, duration, helper.ask);
             Console.ReadLine();
         }
         internal void Subtraction()
@@ -57,7 +57,7 @@ namespace MathGame
             stopWatch.Start();
 
             int score = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < helper.ask; i++)
             {
                 Console.Clear();
                 Console.WriteLine("Subtraction");
@@ -83,7 +83,7 @@ namespace MathGame
             string duration = time.ToString("mm':'ss");
 
             Console.WriteLine($"Your score is: {score} in {duration}");
-            helper.AddHistory(GameType.Subtraction, score, (Difficulty)helper.lvl, duration);
+            helper.AddHistory(GameType.Subtraction, score, (Difficulty)helper.lvl, duration, helper.ask);
             Console.ReadLine();
         }
 
@@ -93,7 +93,7 @@ namespace MathGame
             stopWatch.Start();
 
             int score = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < helper.ask; i++)
             {
                 Console.Clear();
                 Console.WriteLine("Multiplication");
@@ -120,7 +120,7 @@ namespace MathGame
             string duration = time.ToString("mm':'ss");
 
             Console.WriteLine($"Your score is: {score} in {duration}");
-            helper.AddHistory(GameType.Multiplication, score, (Difficulty)helper.lvl, duration);
+            helper.AddHistory(GameType.Multiplication, score, (Difficulty)helper.lvl, duration, helper.ask);
             Console.ReadLine();
         }
 
@@ -130,7 +130,7 @@ namespace MathGame
             stopWatch.Start();
 
             int score = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < helper.ask; i++)
             {
                 Console.Clear();
                 Console.WriteLine("Division");
@@ -156,7 +156,7 @@ namespace MathGame
             string duration = time.ToString("mm':'ss");
 
             Console.WriteLine($"Your score is: {score} in {duration}");
-            helper.AddHistory(GameType.Division, score, (Difficulty)helper.lvl, duration);
+            helper.AddHistory(GameType.Division, score, (Difficulty)helper.lvl, duration, helper.ask);
             Console.ReadLine();
         }
     }

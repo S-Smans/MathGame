@@ -26,6 +26,9 @@ namespace MathGame
                     case "H":
                         helper.History();
                         break;
+                    case "I":
+                        helper.QuestionCount();
+                        break;
                     case "A":
                         engine.Addition();
                         break;
@@ -61,6 +64,7 @@ namespace MathGame
             Console.WriteLine("-------------------------------------------");
             Console.WriteLine("H - History");
             Console.WriteLine("L - Level Difficulty: " + (Difficulty)helper.lvl);
+            Console.WriteLine("I - Question amount");
             Console.WriteLine("A - Addition");
             Console.WriteLine("S - Subraction");
             Console.WriteLine("M - Multiplication");

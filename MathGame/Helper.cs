@@ -9,7 +9,13 @@ namespace MathGame
     internal class Helper
     {
         private List<Game> games = new List<Game>();
+
+        // Difficulty level of the game
         public int lvl = 1;
+
+        // Question amount that are being asked
+        public int ask = 5;
+
         // Create a class that returns 2 random numbers in an array
         internal int[] GetTwoNumbers()
         {
@@ -53,12 +59,12 @@ namespace MathGame
         {
             foreach (Game game in games)
             {
-                Console.WriteLine($"{game.Date} - {game.Type}({game.Level}): {game.Score}pts in {game.Time}");
+                Console.WriteLine($"{game.Date} - {game.Type}({game.Level}): {game.Score}pts in {game.Time}. {game.Questions} questions");
             }
             Console.ReadLine();
         }
 
-        internal void AddHistory(GameType type, int score, Difficulty level, string time)
+        internal void AddHistory(GameType type, int score, Difficulty level, string time, int questions)
         {
             games.Add(new Game
             {
@@ -66,7 +72,8 @@ namespace MathGame
                 Score = score,
                 Type = type,
                 Level = level,
-                Time = time
+                Time = time,
+                Questions = questions
             });
         }
 
@@ -77,6 +84,29 @@ namespace MathGame
             {
                 lvl = 1;
             }
+        }
+
+        internal void QuestionCount()
+        {
+            Console.Clear();
+            Console.WriteLine("Option menu to change the amount of questions being asked in a game");
+            Console.WriteLine($"{ask} questions are beeing asked now. 1 minimum, 10 maximum");
+            Console.WriteLine("How many questions to ask during a game:");
+ 
+            int input = VerifyResultsInput();
+
+            if (input >= 1 && input <= 10)
+            {
+                ask = input;
+                Console.WriteLine($"Successfuly changed question amount to {ask}");
+                Console.ReadLine();
+            } else
+            {
+                Console.WriteLine($"{input} is invalid. Minimum question amount is 1 and Maximum is 10");
+                Console.ReadLine();
+            }
+
+
         }
     }
 }
