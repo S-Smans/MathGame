@@ -22,6 +22,7 @@ namespace MathGame
         Subtraction,
         Multiplication,
         Division,
+        Random,
     }
 
     internal enum Difficulty
