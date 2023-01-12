@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,10 @@ namespace MathGame
         }
         internal void Addition()
         {
-            int score = 0;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
 
+            int score = 0;
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -40,15 +43,20 @@ namespace MathGame
                     Console.ReadLine();
                 }
             }
+            stopWatch.Stop();
+            TimeSpan time = stopWatch.Elapsed;
+            string duration = time.ToString("mm':'ss");
 
-            Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Addition, score, (Difficulty)helper.lvl);
+            Console.WriteLine($"Your score is: {score} in {duration}");
+            helper.AddHistory(GameType.Addition, score, (Difficulty)helper.lvl, duration);
             Console.ReadLine();
         }
         internal void Subtraction()
         {
-            int score = 0;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
 
+            int score = 0;
             for (int i = 0; i < 5; i++)
             {
                 Console.Clear();
@@ -70,14 +78,20 @@ namespace MathGame
                     Console.ReadLine();
                 }
             }
+            stopWatch.Stop();
+            TimeSpan time = stopWatch.Elapsed;
+            string duration = time.ToString("mm':'ss");
 
-            Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Subtraction, score, (Difficulty)helper.lvl);
+            Console.WriteLine($"Your score is: {score} in {duration}");
+            helper.AddHistory(GameType.Subtraction, score, (Difficulty)helper.lvl, duration);
             Console.ReadLine();
         }
 
         internal void Multiplication()
         {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             int score = 0;
             for (int i = 0; i < 5; i++)
             {
@@ -101,13 +115,20 @@ namespace MathGame
                 }
 
             }
-            Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Multiplication, score, (Difficulty)helper.lvl);
+            stopWatch.Stop();
+            TimeSpan time = stopWatch.Elapsed;
+            string duration = time.ToString("mm':'ss");
+
+            Console.WriteLine($"Your score is: {score} in {duration}");
+            helper.AddHistory(GameType.Multiplication, score, (Difficulty)helper.lvl, duration);
             Console.ReadLine();
         }
 
         internal void Division()
         {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             int score = 0;
             for (int i = 0; i < 5; i++)
             {
@@ -130,8 +151,12 @@ namespace MathGame
                     Console.ReadLine();
                 }
             }
-            Console.WriteLine("Your score is: " + score);
-            helper.AddHistory(GameType.Division, score, (Difficulty)helper.lvl);
+            stopWatch.Stop();
+            TimeSpan time = stopWatch.Elapsed;
+            string duration = time.ToString("mm':'ss");
+
+            Console.WriteLine($"Your score is: {score} in {duration}");
+            helper.AddHistory(GameType.Division, score, (Difficulty)helper.lvl, duration);
             Console.ReadLine();
         }
     }

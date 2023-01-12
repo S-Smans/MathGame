@@ -12,6 +12,7 @@ namespace MathGame
         public int Score { get; set; }
         public GameType Type { get; set; }
         public Difficulty Level { get; set; }
+        public string Time { get; set; }
     }
 
     internal enum GameType
